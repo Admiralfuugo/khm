@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #install_extara_app
     'ariza',
+    'accouts',
 ]
 
 MIDDLEWARE = [
@@ -212,3 +213,6 @@ LOGGING = {
         },
     },
 }
+
+
+LOGIN_REDIRECT_URL = 'index'
