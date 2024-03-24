@@ -1,0 +1,288 @@
+<html>
+<header>
+<title> </title>
+
+<style> 
+  tr, td, th, thead, tfoot {
+    page-break-inside: avoid !important;
+  }
+  table,
+  th,
+  td {
+    border: 0.5px solid black;
+    border-collapse: collapse;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+ .main-page {
+    width: 297mm;
+    min-height: 210mm;
+    margin: auto;
+    background: white;
+    padding: 3%;
+    padding-left: 3%;
+    text-aline:center;
+    
+  } 
+
+
+  body {
+    background: rgb(204,204,204); 
+  }
+
+  {% comment %} page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.2cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);  
+  } {% endcomment %}
+
+  page[size="A4"] {  
+    width: 210mm;
+    height: 297mm; 
+  }
+  page[size="A4"][layout="landscape"] {
+    width: 297mm;
+    height: 210mm;  
+  }
+
+
+
+
+table{
+margin: 0 auto;
+border-color: black ;
+font-size: 14px;
+}
+#yu{
+  
+  margin-right: 3rem;
+  text-align: right;
+}
+
+#orders{
+font-size: 14px;
+}
+
+#fristr{
+font-size: 14px;
+margin-right: 3rem;
+text-align: right;
+
+}
+
+.orta{
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family:'Times New Roman'
+}
+
+.vertical-text {
+            transform: rotate(270deg); /* Matnni 270 gradusga burib chiqarish */
+            white-space: nowrap;
+            text-orientation: upright; /* Matnni qatorda joylashtirish */
+            /* Matn uchun engli bolalar */
+        }
+.avto{
+  text-align: center;
+}
+
+.vr{
+    padding: 8px;
+    text-align: center; /* Yozuvni markazga joylash */
+    writing-mode: vertical-rl;        
+    transform: rotate(180deg); 
+    height: 150px;
+}
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+      .tg td{border-color:black;border-style:solid;border-width:1px;font-family:'Times New Roman', Times, serif, sans-serif;font-size:14px;
+        overflow:hidden;padding:10px 10px;word-break:normal;}
+      .tg th{border-color:black;border-style:solid;border-width:1px;font-family:'Times New Roman', Times, serif, sans-serif;font-size:14px;
+        font-weight:normal;overflow:hidden;padding:10px 4px;word-break:normal;}
+      .tg .tg-c3ow{border-color:inherit;text-align:center; vertical-align:top}
+      .tg .tg-0pky{border-color:inherit;text-align:left; vertical-align:top}
+
+@media print {
+  body, page {
+    background: white;
+    margin: 0;
+    box-shadow: 0;
+  }
+
+  #pri{
+    margin: 15 20 !important;
+  }
+}
+
+</style>
+</header>
+<body>
+  <div class="main-page" >
+      
+
+
+  
+{% comment %} <page size="A4" layout="landscape"> {% endcomment %}
+<br>
+
+<br>
+<p id="fristr">Нусха. №___<br>
+Илова № 1ㅤ
+</p>
+<p class="orta">20__йилда ҳарбий қисм истеъмоли учун зарур бўлган ёқилғи, мой, сурков ва махсус суюқликлар учун <br> (бириктирилган ҳарбий қисм ва бўлинмаларни ҳисобга олган ҳолда)<br> СЎРОВНОМА </p>
+
+<table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+    <colgroup>
+    <col style="width: 28.272727px">
+    <col style="width: 99.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    <col style="width: 28.272727px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="vertical-text" rowspan="3">т/р № </th>
+        <th class="avto" rowspan="3">Истеъмол учун зарур бўлган ЁММ номи            
+            </th>
+        <th class="vertical-text" rowspan="3">Ўлчов бирлиги</th>
+        <th class="avto" colspan="9">Техника турлари бўйича талаб этилаётган ҳисоби</th>
+        <th class="avto" colspan="5">Минимальная потребность</th>
+      </tr>
+      <tr>
+        <th class="vertical-text" rowspan="2">Жами</th>
+        <th class="avto" colspan="8">Шу жумладан</th>
+        <th class="vertical-text" rowspan="2">Жами</th>
+        <th class="avto" colspan="4">Шу жумладан квартал бўйича</th>
+      </tr>
+      <tr>
+        <th class="vr">Танклар, САУ</th>
+        <th class="vr">Арт. тягачи</th>
+        <th class="vr">БМП, БТР, мотоцикллар</th>
+        <th class="vr">Автомобиллар</th>
+        <th class="vr">Учувчи аппаратлар </th>
+        <th class="vr">Трактор ва муҳандис техникалари, қурилиш механизм</th>
+        <th class="vr">Махсус машиналарнинг автоном двигателлари стационар двигателлар </th>
+        <th class="vr">Ишлаб чиқариш ва техник эҳтиёжлар</th>
+        <th class="avto">I</th>
+        <th class="avto">II</th>
+        <th class="avto">III</th>
+        <th class="avto">IV</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="avto">1</td>
+        <td class="avto">2</td>
+        <td class="avto">3</td>
+        <td class="avto">4</td>
+        <td class="avto">5</td>
+        <td class="avto">6</td>
+        <td class="avto">7</td>
+        <td class="avto">8</td>
+        <td class="avto">9</td>
+        <td class="avto">10</td>
+        <td class="avto">11</td>
+        <td class="avto">12</td>
+        <td class="avto">13</td>
+        <td class="avto">14</td>
+        <td class="avto">15</td>
+        <td class="avto">16</td>
+        <td class="avto">17</td>
+      </tr>
+
+      {% comment %} {%for adds in add_fuel %} {% endcomment %}
+      {%for adds, sum in obj_with_sum %}
+      <tr>
+        <td class="avto">{{adds.pk}}</td>
+        <td class="avto">{{adds.yoq_nomi }}</td>
+        <td class="avto">т</td>
+        <td class="avto">{{adds.ishab|add:adds.maxs|add:adds.trak|add:adds.uchuv|add:adds.avto|add:adds.bmp|add:adds.art|add:adds.tank}}</td>
+        <td class="avto">{{adds.tank }}</td>
+        <td class="avto">{{adds.art }}</td>
+        <td class="avto">{{adds.bmp }}</td>
+        <td class="avto">{{adds.avto }}</td>
+        <td class="avto">{{adds.uchuv }}</td>
+        <td class="avto">{{adds.trak }}</td>
+        <td class="avto">{{adds.maxs }}</td>
+        <td class="avto">{{adds.ishab }}</td> 
+        {% comment %} <td class="avto">{{ adds.rim1|add:adds.rim2|add:adds.rim3|add:adds.rim4 }}</td> {% endcomment %}
+        <td class="avto">{{ sum }}</td>
+        <td class="avto">{{adds.rim1 }}</td>
+        <td class="avto">{{adds.rim2 }}</td>
+        <td class="avto">{{adds.rim3 }}</td>
+        <td class="avto">{{adds.rim4}}</td>
+      </tr>
+      {% endfor %}
+    
+      
+
+
+      {% comment %} {%for adds, tank in tank_total_sum %} {% endcomment %}
+      <tr>        
+        <td class="avto" colspan="2"><b>ЖАМИ - АБ</b></td>
+        <td class="avto">т</td>
+        <td class="avto">{{umtrak}}</td>
+        <td class="avto">{{tank_total_sum}}</td>
+        <td class="avto">{{art_total_sum}}</td>
+        <td class="avto">{{bmp_total_sum}}</td>
+        <td class="avto">{{avto_total_sum}}</td>
+        <td class="avto">{{uchuv_total_sum}}</td>
+        <td class="avto">{{trak_total_sum}}</td>
+        <td class="avto">{{maxs_total_sum}}</td>
+        <td class="avto">{{ishab_total_sum}}</td>
+        <td class="avto">{{umrim}}</td>
+        <td class="avto">{{rim1_total_sum}}</td>
+        <td class="avto">{{rim2_total_sum}}</td>
+        <td class="avto">{{rim3_total_sum}}</td>
+        <td class="avto">{{rim4_total_sum}}</td>
+      </tr>
+      {% comment %} {% endfor %} {% endcomment %}
+      
+      
+
+
+      <tr>
+        <td class="avto">1</td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+        <td class="avto"></td>
+      </tr>
+      
+    </tbody>
+    </table>
+
+  </div> 
+
+</page>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<html>
+<header>
+<title> </title>
+
+<style>
+  tr, td, th, thead, tfoot {
+    page-break-inside: avoid !important;
+  }
+  table,
+  th,
+  td {
+    border: 0.5px solid black;
+    border-collapse: collapse;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+ .main-page {
+    width: 297mm;
+    min-height: 210mm;
+    margin: auto;
+    background: white;
+    padding: 3%;
+    padding-left: 3%;
+    text-aline:center;
+    
+  } 
+
+
+
+    body {
+      background: rgb(204,204,204); 
+    }
+    {% comment %} page {
+      background: white;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 0.2cm;
+      box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);  
+    } {% endcomment %}
+    page[size="A4"] {  
+      width: 210mm;
+      height: 297mm; 
+    }
+    page[size="A4"][layout="landscape"] {
+      width: 297mm;
+      height: 210mm;  
+    }
+    
+    table{
+    margin: 0 auto;
+    border-color: black ;
+    font-size: 14px;
+    }
+    #yu{
+      
+      margin-right: 3rem;
+      text-align: right;
+    }
+    
+    #orders{
+    font-size: 14px;
+    }
+    
+    #fristr{
+    font-size: 14px;
+    margin-right: 3rem;
+    text-align: right;
+    
+    }
+    
+    .orta{
+      text-align: center;
+      color: rgb(0, 0, 0);
+      font-family:'Times New Roman'
+    }
+    
+    .vertical-text {
+                transform: rotate(270deg); /* Matnni 270 gradusga burib chiqarish */
+                white-space: nowrap;
+                text-orientation: upright; /* Matnni qatorda joylashtirish */
+                /* Matn uchun engli bolalar */
+            }
+    .avto{
+      text-align: center;
+    }
+    
+    .vr{
+    padding: 8px;
+    text-align: center; /* Yozuvni markazga joylash */
+    writing-mode: vertical-rl;        
+    transform: rotate(180deg); 
+    height: 150px;
+}
+    
+    .tg  {border-collapse:collapse;border-spacing:0;}
+          .tg td{border-color:black;border-style:solid;border-width:1px;font-family:'Times New Roman', Times, serif, sans-serif;font-size:14px;
+            overflow:hidden;padding:1px 1px;word-break:normal;}
+          .tg th{border-color:black;border-style:solid;border-width:1px;font-family:'Times New Roman', Times, serif, sans-serif;font-size:14px;
+            font-weight:normal;overflow:hidden;padding:5px 1px;word-break:normal;}
+          .tg .tg-c3ow{border-color:inherit;text-align:center; vertical-align:top}
+          .tg .tg-0pky{border-color:inherit;text-align:left; vertical-align:top}
+    
+    @media print {
+      body, page {
+        background: white;
+        margin: 0;
+        box-shadow: 0;
+      }
+    
+      #pri{
+        margin: 15 20 !important;
+      }
+    }
+    </style>
+</header>
+<body>
+  <div class="main-page" >
+
+{% comment %} <page size="A4" layout="landscape"> {% endcomment %}
+<br>
+
+<br>
+<p id="fristr">Нусха. №___<br>
+    Илова № 2ㅤ
+    </p>
+    <p class="orta">20__ йилга ҳарбий қисм ва унга бириктирилган ҳарбий қисм ва бўлинмалардаги техникаларнинг ёқилғига бўлган эҳтиёж <br>ҲИСОБИ </p>
+
+<table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+    <colgroup>
+        <col style="width: 28.272727px">
+        <col style="width: 99.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        <col style="width: 28.272727px">
+        </colgroup>
+      <thead>
+        <tr>
+          <th class="vr" rowspan="4">т/р </th>
+          <th class="vr" rowspan="4">Техника турлари (машина маркаси, стационар двигатель ёки агрегат) </th>
+          <th class="avto" colspan="6">Техникалар миқдори</th>
+          <th class="avto" colspan="7">Барча миқдордаги штат техникаларининг моторесурсига режалаштирилаётган сарфи</th>
+          <th class="vr" rowspan="4">Ёқилғи сарфи (100 км юриш меъёри бўйича) 1м/моат иш учун</th>
+          <th class="avto" colspan="6">Тахминий ёқилғи сарфи тоннада</th>
+        </tr>
+        <tr>
+          <th class="vr" rowspan="3">ЖАМИ</th>
+          <th class="auto" colspan="5">Шу жумладан эксплуатация гуруҳлари бўйича </th>
+          <th class="vr" rowspan="3">Ўл.бирлиги (минг.км, м/соат)</th>
+          <th class="vr" rowspan="3">ЖАМИ </th>
+          <th class="auto" colspan="5">Шу жумладан эксплуатация гуруҳлари бўйича</th>
+          <th class="avto" colspan="3">Автобензин</th>
+          <th class="vr" rowspan="3">Дизель ёқилғиси</th>
+          <th class="vr" rowspan="3">ТС-1 ёқилғиси</th>
+          <th class="vr" rowspan="3">Иситиш ёқилғиси</th>
+        </tr>
+        <tr>
+          <th class="vr" rowspan="2">жанговар</th>
+          <th class="vr" rowspan="2">ўқув жанговар </th>
+          <th class="vr" rowspan="2">сафарбарлик</th>
+          <th class="vr" rowspan="2">транспорт</th>
+          <th class="vr" rowspan="2">ўқув</th>
+          <th class="vr" rowspan="2">жанговар</th>
+          <th class="vr" rowspan="2">ўқув жанговар </th>
+          <th class="vr" rowspan="2">сафарбарлик</th>
+          <th class="vr" rowspan="2">транспорт</th>
+          <th class="vr" rowspan="2">ўқув</th>
+         
+          <th class="vr" rowspan="2">ЖАМИ</th>
+          <th class="auto" colspan="2">Шу жумладан<v/th>
+        </tr>
+        <tr>
+          <th class="avto">АИ-91</th>
+          <th class="avto">АИ-80</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tg-0pky">1</td>
+          <td class="tg-0pky">2</td>
+          <td class="tg-0pky">3</td>
+          <td class="tg-0pky">4</td>
+          <td class="tg-0pky">5</td>
+          <td class="tg-0pky">6</td>
+          <td class="tg-0pky">7</td>
+          <td class="tg-0pky">8</td>
+          <td class="tg-0pky">9</td>
+          <td class="tg-0pky">10</td>
+          <td class="tg-0pky">11</td>
+          <td class="tg-0pky">12</td>
+          <td class="tg-0pky">13</td>
+          <td class="tg-0pky">14</td>
+          <td class="tg-0pky">15</td>
+          <td class="tg-0pky">16</td>
+          <td class="tg-0pky">17</td>
+          <td class="tg-0pky">18</td>
+          <td class="tg-0pky">19</td>
+          <td class="tg-0pky">20</td>
+          <td class="tg-0pky">21</td>
+          <td class="tg-0pky">22</td>
+        </tr>
+        
+        <tr>
+            <td class="tg-0pky">1</td>
+            <td class="tg-0pky">Объект № ___</td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+          </tr>
+
+
+
+        <tr>
+          <td class="tg-0pky">2</td>
+          <td class="tg-0pky">Объект № ___</td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+        </tr>
+        
+  
+        <tr>
+          <td class="" colspan="16">Ҳарбий қисм ва унинг таъминотидаги ҳарбий қисм ва бўлинмалар учун жами</td>         
+         
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky"></td>
+        </tr>
+
+        <tr>
+            <td class="" colspan="16">Жами ҳарбий қисм учун</td>         
+           
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+          </tr>
+
+          <tr>
+            <td class="" colspan="16">Жами ҳарбий қисм таъминотидаги ҳарбий қисм ва бўлинмалар учун </td>         
+           
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+          </tr>
+
+          <tr>
+            <td class="" colspan="16">Жами ҳарбий қисм таъминотидаги ҳарбий қисм ва бўлинмалар учун </td>         
+           
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+          </tr>
+
+           <tr>
+            <td class="" colspan="16">Жами ҳарбий қисм таъминотидаги ҳарбий қисм ва бўлинмалар учун </td>         
+           
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+            <td class="tg-0pky"></td>
+          </tr>
+
+  
+  
+  
+  
+  
+      </tbody>
+      </table>
+
+
+    </div> 
+</page>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<html>
+<header>
+<title> </title>
+
+<style>
+body {
+  background: rgb(204,204,204); 
+}
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.2cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);  
+}
+page[size="A4"] {  
+  width: 210mm;
+  height: 297mm; 
+}
+page[size="A4"][layout="landscape"] {
+  width: 297mm;
+  height: 210mm;  
+}
+
+table{
+margin: 0 auto;
+border-color: black ;
+font-size: 14px;
+}
+#yu{
+  
+  margin-right: 3rem;
+  text-align: right;
+}
+
+#orders{
+font-size: 14px;
+}
+
+#fristr{
+font-size: 14px;
+margin-right: 3rem;
+text-align: right;
+
+}
+
+.fristrr{
+font-size: 14px;
+margin-right: 3rem;
+text-align: center;
+
+}
+
+.orta{
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family:'Times New Roman'
+}
+
+.vertical-text {
+            transform: rotate(270deg); /* Matnni 270 gradusga burib chiqarish */
+            white-space: nowrap;
+            text-orientation: upright; /* Matnni qatorda joylashtirish */
+            /* Matn uchun engli bolalar */
+        }
+.avto{
+  text-align: center;
+}
+
+.vr{
+    padding: 8px;
+    text-align: center; /* Yozuvni markazga joylash */
+    writing-mode: vertical-rl;        
+    transform: rotate(180deg); 
+    height: 150px;
+}
+.iii{
+font-size: 14px;
+margin-right: 5rem;
+text-align: right;
+
+}
+.tg  {border-collapse:collapse;border-spacing:0;}
+      .tg td{border-color:black;border-style:solid;border-width:1px;font-family:'Times New Roman', Times, serif, sans-serif;font-size:14px;
+        overflow:hidden;padding:10px 10px;word-break:normal;}
+      .tg th{border-color:black;border-style:solid;border-width:1px;font-family:'Times New Roman', Times, serif, sans-serif;font-size:14px;
+        font-weight:normal;overflow:hidden;padding:10px 4px;word-break:normal;}
+      .tg .tg-c3ow{border-color:inherit;text-align:center; vertical-align:top}
+      .tg .tg-0pky{border-color:inherit;text-align:left; vertical-align:top}
+
+@media print {
+  body, page {
+    background: white;
+    margin: 0;
+    box-shadow: 0;
+  }
+
+  #pri{
+    margin: 15 20 !important;
+  }
+}
+</style>
+</header>
+<body>
+
+<page size="A4" layout="landscape">
+<br>
+
+<br>
+<p id="fristr">Нусха. №___<br>
+Илова № 1ㅤ
+<p class="orta">№3</p>
+</p>
+<br>
+<br>
+<p class="orta">РАСШИФРОВКА <br> граф 13-17 заявки на ГСМ Чирчикского ВТКИУ на 2024 год </p>
+<p class="iii">(в тоннах)</p>
+
+
+<table class="tg" style="undefined;table-layout: fixed; width: 1000px">
+    <colgroup>
+    <col style="width: 98.272727px">
+    <col style="width: 128.272727px">
+    <col style="width: 42.272727px">
+    <col style="width: 40.272727px">
+    <col style="width: 45.272727px">
+    <col style="width: 43.272727px">
+    <col style="width: 42.272727px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="avto" rowspan="3">Наименование ГСМ</th>
+        <th class="avto" rowspan="3">Место получения ГСМ (ЖД. станция, ЦБГ)</th>
+        <th class="avto" colspan="5">Минимальная потребность*</th>
+      </tr>
+      <tr>
+        <th class="avto" rowspan="2">Всего</th>
+        <th class="avto" colspan="4">В т.ч. по квартально</th>
+      </tr>
+      <tr>
+        <th class="avto">I</th>
+        <th class="avto">II</th>
+        <th class="avto">III</th>
+        <th class="avto">IV</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for adds in add_fuel%}
+      <tr>
+        <td class="avto">{{adds.yoq_nomi }}</td>
+        <td class="avto">ЦБГ</td>
+        <td class="avto">{{ total_result}}</td>
+        <td class="avto">{{adds.rim1 }}</td>
+        <td class="avto">{{adds.rim2 }}</td>
+        <td class="avto">{{adds.rim3 }}</td>
+        <td class="avto">{{adds.rim4 }}</td>
+      </tr>
+      {% endfor %}
+
+          
+    </tbody>
+    </table>
+
+    <br>
+      <br>
+
+      <p class="orta">НАЧАЛЬНИК СЛУЖБЫ ГСМ ЧВТКИУ<br>подполковник ㅤㅤㅤㅤㅤㅤㅤㅤㅤ А.Салимов</p>
+
+
+
+
+
+
+</page>
+</body>
+</html>

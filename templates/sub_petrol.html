@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block title %}Fuel Supply{% endblock title %}
+{%block content %} {% load static %}
+
+
+
+
+<!-- Main Content -->
+<div class="main-content">
+  <section class="section">
+    <div class="section-header">
+      <h1>Texnik ko'rik o'tkazish</h1>
+      <!-- <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+        <div class="breadcrumb-item"><a href="#">Modules</a></div>
+        <div class="breadcrumb-item">DataTables</div>
+      </div> -->
+    </div>
+
+    <div class="section-body">
+      
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>ASASIY JADVAL</h4>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Yo'nalish</th>
+                            <th>D. Raqami</th>
+                            <th>Sarfi (100 km, litr)</th>
+                            <th>Yoqilg'i turi</th>
+                            <th> Berilgan yoqilg'i (litr) </th> 
+                        </tr>
+                        {% for ve in application.vehicles.all  %}
+                            <tr>
+                                <td>{{ application.route}}</td>
+                                <td>{{ ve.number }}</td>
+                                <td>{{ ve.fuel_consumption }}</td>
+                                <td>
+                                    <div class="form-group">
+                                        <select class="form-control" name="select{{ve.pk}}" required>
+                                        {% for type in ve.fuel_type.all %}
+                                        <option value="{{type.pk}}">{{type.title}}</option>
+                                        {% endfor %}
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                <img src="{% static 'assets/img/cars logo/logo.png' %}" style="width: 20px; height: 20px;" alt="">
+                                                </div>
+                                            </div>
+                                            <input type="text" name="{{ ve.pk }}" id="{{ ve.pk }}" class="form-control currency" required>
+                                        </div>
+                                    </div>
+                                </td>
+                                
+                            </tr>
+                        {% endfor %}    
+                    </table>
+                    {% comment %} <a href="#" class="btn btn-outline-success">Yuborish</a>     {% endcomment %}
+                    <div class="card-footer text-center"><button class="btn btn-success"  type="submit">ㅤㅤㅤㅤYuborishㅤㅤㅤㅤ</button> </div>                         
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+</div>
+
+</div>
+
+
+
+
+
+
+{% endblock content %}
+
+
+

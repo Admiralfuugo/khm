@@ -9,6 +9,7 @@
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{% static 'assets/modules/bootstrap/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/modules/fontawesome/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/modules/select2/dist/css/select2.min.css' %}">
 
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="{% static 'assets/modules/jqvmap/dist/jqvmap.min.css' %}">
@@ -67,7 +68,7 @@
                   </div>
                   <div class="dropdown-item-desc">
                     Buyurtma Avtobus!
-                    <div class="time text-primary">2 oldin</div>
+                    <div class="time text-primary">2 kun oldin</div>
                   </div>
                 </a>
                 
@@ -78,18 +79,20 @@
             </div>
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="{% static 'assets/img/avatar/avatar-1.png' %}" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Anvarov A</div></a>
+            <img alt="image" src="{% static 'assets/logo.png' %}"  class="rounded-circle mr-1">
+            <img alt="image" src="{% static 'assets/img/avatar/avatar-1.png' %}"  class="rounded-circle mr-1">
+            
+            <div class="d-sm-none d-lg-inline-block">{{ user.first_name}} {{ user.last_name}}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title"></div>
-              <a href="{% static 'features-profile.html' %}" class="dropdown-item has-icon">
+              <a href="#" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profil
               </a>
-              <a href="{% static 'features-settings.html' %}" class="dropdown-item has-icon">
+              <a href="#" class="dropdown-item has-icon">
                 <i class="fas fa-cog"></i> Sozlamlar
               </a>
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item has-icon text-danger">
+              <a href="{% url "logout" %}" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Tizimdan chiqish
               </a>
             </div>
@@ -99,55 +102,81 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="{% url 'index' %}"><img class="mr-3 rounded" width="40" src="{% static 'assets/img/cars logo/logo.png ' %}" alt="itclub">FUEL SUPPLY</a>
+            <a href="{% url 'dashboard' %}"><img class="mr-3 rounded" width="60" src="{% static 'assets/gif/settings.gif ' %}" alt="itclub">FUEL SUPPLY</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{% url 'index' %}">St</a>
+            <a href="{% url 'dashboard' %}">FS</a>
           </div>
           <ul class="sidebar-menu">
-            <li class="menu-header"><a class="nav-link" href="{% static 'index.html' %}"></a></li>
+            <li class="menu-header"><a class="nav-link" ></a></li>
             
             <li class="dropdown active">
-              <a href="{% url 'index' %}" class="nav-link "><i class="fas fa-fire"></i><span>Bosh sahifa</span></a>              
+              <a href="{% url 'dashboard' %}" class="nav-link "><i class="fas fa-fire"></i><span>Bosh sahifa</span></a>              
             </li>
+
             <li class="dropdown active">
-                <a href="{% url 'ariza' %}" class="nav-link "><i class="fas fa-monument"></i><span>Ariza qoldirish</span></a>              
+              <a href="{% url 'add_fuel' %}" class="nav-link "><i class="fas fa-envelope"></i><span>Yoqilg'ilarni qo'shish</span></a>              
+            </li>
+
+            <li class="dropdown active">
+              <a href="{% url 'showing' %}" class="nav-link "><i class="fas fa-th"></i><span>Ariza Holati</span></a>              
+            </li>
+
+
+            <li class="dropdown active">
+                <a href="{% url "application" %}" class="nav-link "><i class="fas fa-monument"></i><span>Ariza qoldirish</span></a>              
               </li>
 
               <li class="dropdown active">
-                <a href="{% url 'arizalar' %}" class="nav-link "><i class="fas fa-map-marker"></i><span>Arizalar holati</span></a>              
+                <a href="{% url "applications" %}" class="nav-link "><i class="fas fa-map-marker"></i><span>Arizalar holati</span></a>              
               </li>
 
               <li class="dropdown active">
-                <a href="{% url 'xizmat_boshiliqlar' %} " class="nav-link "><i class="fas fa-envelope"></i><span>Xizmat boshlig'i</span></a>              
+                <a href="{% url "headquarters" pk=1 %}" class="nav-link "><i class="fas fa-envelope"></i><span>Xizmat boshlig'i</span></a>              
               </li>
 
               <li class="dropdown active">
-                <a href="{% url 'texnik_korik' %}" class="nav-link "><i class="fas fa-receipt"></i><span>Texnik ko'rik</span></a>              
+                <a href="{% url "inspection" %}" class="nav-link "><i class="fas fa-receipt"></i><span>Texnik ko'rik</span></a>              
               </li>
 
               <li class="dropdown active">
-                <a href="{% url 'yoqilgi' %}" class="nav-link "><i class="fas fa-file-invoice"></i><span>Yoqilg'i</span></a>              
+                <a href="{% url "petrol" %}" class="nav-link "><i class="fas fa-file-invoice"></i><span>Yoqilg'i</span></a>              
               </li>
 
               <li class="dropdown active">
-                <a href="{% url 'avtopark' %}" class="nav-link "><i class="fas fa-rocket"></i><span>Avtopark</span></a>              
+                <a href="{% url "parking" %}" class="nav-link "><i class="fas fa-rocket"></i><span>Avtopark</span></a>              
               </li>
 
               <li class="dropdown active">
-                <a href="{% url 'haydovchi' %}" class="nav-link "><i class="fas fa-th"></i><span>Haydovchi</span></a>              
+                <a href="{% url "driver" %}" class="nav-link "><i class="fas fa-th"></i><span>Haydovchi</span></a>              
               </li>
 
+            
 
+              <li class="dropdown">
+                <a href="" class="nav-link has-dropdown"><i class="fas fa-print"></i> <span>Chop etish</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="{% url "N_avto" %}">1-page</a></li>
+                  <li><a class="nav-link" href="{% url "N_zayafka" %}">2-page</a></li>
+                  <li><a class="nav-link" href="{% url "N3" %}">3-page</a></li>
+                  <li><a class="nav-link" href="{% url "N4" %}">4-page</a></li>
+                  <li><a class="nav-link" href="{% url "N5" %}">5-page</a></li>
+                  <li><a class="nav-link" href="{% url "N6" %}">6-page</a></li>
+                  <li><a class="nav-link" href="{% url "N7" %}">7-page</a></li>  
+                  <li><a class="nav-link" href="{% url "N8" %}">8-page</a></li>  
+                  <li><a class="nav-link" href="{% url "N9zayafka" %}">9-page</a></li>  
+                  <li><a class="nav-link" href="{% url "Nback" %}">10-page</a></li>  
+                  <li><a class="nav-link" href="{% url "Ndallot" %}">11-page</a></li>  
+                  <li><a class="nav-link" href="{% url "Nmoy" %}">12-page</a></li>
+                  <li><a class="nav-link" href="{% url "add_fuel" %}">13-page</a></li> 
+                  <li><a class="nav-link" href="{% url "Nxisobot" %}">14-page</a></li>     
 
+             
+                </ul>
+              </li>
 
-
-
-
-               
           </ul>
 
-              
          </aside>
        </div>
       </div>
@@ -195,12 +224,38 @@
 <script src="{% static 'assets/modules/chocolat/dist/js/jquery.chocolat.min.js' %}"></script>
 <script src="{% static 'assets/modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js' %}"></script>
 <script src="{% static 'assets/modules/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+<script src="{% static 'assets/modules/select2/dist/js/select2.full.min.js' %}"></script>
 
 <!-- Page Specific JS File -->
 <script src="{% static 'assets/js/page/index.js' %}"></script>
 
+ <!-- JS Libraies -->
+ <script src="{% static 'assets/modules/datatables/datatables.min.js' %}"></script>
+ <script src="{% static 'assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js' %}"></script>
+ <script src="{% static 'assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js' %}"></script>
+ <script src="{% static 'assets/modules/jquery-ui/jquery-ui.min.js' %}"></script>
+
+ <!-- Page Specific JS File -->
+ <script src="{% static 'assets/js/page/modules-datatables.js' %}"></script>
+ 
+ <!-- Template JS File -->
+ <script src="{% static 'assets/js/scripts.js' %}"></script>
+ <script src="{% static 'assets/js/custom.js' %}"></script>
+
+    <!-- JS Libraies -->
+    <script src="{% static 'assets/modules/izitoast/js/iziToast.min.js' %}"></script>
+
+   <!-- Page Specific JS File -->
+   <script src="{% static 'assets/js/page/modules-toastr.js' %}"></script>
+   
 <!-- Template JS File -->
 <script src="{% static 'assets/js/scripts.js' %}"></script>
 <script src="{% static 'assets/js/custom.js' %}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+ 
+
+
 </body>
 </html>

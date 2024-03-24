@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block title %}Fuel Supply{% endblock title %}
+{%block content %} {% load static %}
+
+
+
+
+
+
+<div class="main-content">
+  <section class="section">
+    
+
+    <div class="section-body">
+     
+
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>ASASIY JADVAL</h4>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-striped" id = "table-1">
+                  <thead>
+                    <tr>
+                        
+                        <th>id</th>
+                        <th>Texnika turi</th>
+                        <th>Texnika</th>
+                        <th>Vaqti</th>
+                        <th>Holati</th>
+                        <th>Yo'nalish</th>
+                        <th>Batafsil</th>
+                    </tr>
+                    <thead>
+                    <tbody> 
+                  
+                    {% for application in applications %}
+                    <tr>
+                        
+                        <td>{{ application.pk }}</td>
+                        <td>{{ application.get_automobile_type_display }}</td>
+
+                        <td>  
+                          {% for obj in application.vehicles.all %}
+                            {{ obj.number }}
+                          {% endfor %}
+                        </td>
+                        <td> {{ application.date_time | date:"d.m.Y H:i" }} </td>
+                        <td><div class="badge badge-success"> {{ application.get_status_display }}</div></td>
+                        
+                        
+                        <td> {{ application.route }} </td>
+                        <td><a href="{% url "sub-inspection" pk=application.pk %}" class="btn btn-secondary">Batafsil</a></td>
+                    
+                    </tr>
+                    {% endfor %}
+                    <tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    </div> 
+    
+    </div>
+
+
+
+
+
+
+{% endblock content %}
+
+
+

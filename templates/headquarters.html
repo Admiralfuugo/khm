@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block title %}Fuel Supply{% endblock title %}
+{%block content %} {% load static %}
+
+
+
+<!-- Main Content -->
+<div class="main-content">
+    <section class="section">
+      <div class="section-header">
+        <h1>Xizmat boshlig'i</h1>
+        
+      </div>
+
+      <div class="section-body">
+        <h2 class="section-title">Arizalar</h2>
+        <p class="section-lead">Ushbu bo'limda kelib tushgan arizalar bo'yicha avtomobil va yo'l xaritasi belgilanadi</p>
+
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h4>Kelib tushgan ariza</h4>
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label>Holati</label>
+                  <input readonly type="text" class="form-control" value="{{application.get_status_display}}">
+                  
+                </div>
+                <div class="form-group">
+                  <label>Ariza beruvchi</label>
+                  <input readonly type="text" class="form-control" value="{{application.author}}">
+                  
+                </div>
+
+                <div class="form-group">
+                  <label>Texnika turi</label>
+                  <input readonly type="text" class="form-control" value="{{application.get_automobile_type_display}}">
+                </div>
+
+                <div class="form-group">
+                  <label>Beriladigan vaqt</label>
+                  <input readonly type="text" class="form-control datemask" value="{{application.date_time | date:"d.m.Y H:i" }}" placeholder="YYYY/MM/DD">
+                </div>
+
+                <div class="form-group">
+                  <label>Yo'nalish</label>
+                  <input readonly type="text" class="form-control" value="{{application.route}}">
+                </div>
+
+                <div class="form-group">
+                  <label>Yo'lovchilar soni</label>
+                  <input readonly type="text" class="form-control" value="{{application.passengers_count}}">
+                </div>
+
+                <div class="form-group">
+                  Bildirgi:
+                  {% if application.file %}
+                    <a href="{{ application.file.url }}" target="_blank">{{ application.file.name }}</a>
+                    
+                  {% else %}
+                  Ma'lumot yo'q
+                  {% endif %}
+                </div>
+
+                
+
+                <div class="form-group">
+                  <label> Izoh</label>
+                  <input readonly type="text" class="form-control" value="{{application.comment}}">
+                </div>
+  
+              </div>
+            </div>
+            
+            
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-6">
+            <form action="" method="POST">
+              {% csrf_token %}
+              <div class="card">
+                <div class="card-header">
+                  <h4>Tanlang</h4>
+                </div>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label>Texnika(lar) tanlang</label>
+                    {% if read_only %}
+                      <select class="form-control select2" name="cars" id="cars" multiple disabled>
+                        {% for ve in application.vehicles.all  %}
+                          <option value="{{ ve.pk }}" selected>{{ve.number}}</option>
+                        {% endfor %}
+                      
+                      </select>
+                    {% else %}
+                      <select class="form-control select2" name="cars" id="cars" multiple>
+                        {% for ve in vehicles  %}
+                          {% if ve in application.vehicles.all %}
+                          <option value="{{ ve.pk }}" selected>{{ve.number}}</option>
+                          {% else %}
+                            <option value="{{ ve.pk }}" >{{ve.number}}</option>
+                          {% endif %}
+                        {% endfor %}
+                      
+                      </select>
+                    {% endif %}
+                  </div>     
+
+                </div>
+                <button class="btn btn-outline-success" type="submit" id="toastr-4">Yuborish</button>
+                {% comment %} <a type="submit" class="btn btn-outline-success">Yuborish</a> {% endcomment %}
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </div>
+  
+</div>
+
+
+{% endblock content %}
+

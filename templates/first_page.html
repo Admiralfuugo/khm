@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- General CSS Files -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/modules/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/modules/fontawesome/css/all.min.css' %}"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kirish Sahifasi</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("fon_rasm.jpg");
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container img {
+        width: 200px;
+        border-radius: 50%;
+      }
+      .container h4 {
+        margin-top: 20px;
+        color: #2f4863;
+        text-align: center;
+        width: 40%;
+        font-family: "Nunito";
+      }
+      .container button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .container button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background"></div>
+
+    <div class="container">
+      {% comment %}
+      <img
+        src="{% static 'assets/img/iconnnn/madofa1.png ' %}"
+        alt="Pani rasm"
+      />
+      {% endcomment %}
+      <img src="{% static 'assets/11.PNG' %}" alt="Pani rasm">
+      <img src="{% static 'assets/22.jpg' %}" alt="Pani rasm">
+      <h4>
+        MUDOFAA VAZIRLIGINI AVTOMOBILLARNI MASOFADAN BUYURTMA BERISH VA ULARNING
+        YOQILG'I TA'MINOTINI AMALGA OSHIRUVHI SAYTGA <br />XUSH KELIBSIZ
+      </h4>
+      <br />
+      <a href="{% url "login" %}" class="btn btn-outline-success">TIZIMGA KIRISH</a>
+    </div>
+  </body>
+</html>
