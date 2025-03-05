@@ -67,7 +67,7 @@
                     <i class="fas fa-code"></i>
                   </div>
                   <div class="dropdown-item-desc">
-                    Buyurtma Avtobus!
+                    86729 begona flesh xotira!
                     <div class="time text-primary">2 kun oldin</div>
                   </div>
                 </a>
@@ -79,7 +79,7 @@
             </div>
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="{% static 'assets/logo.png' %}"  class="rounded-circle mr-1">
+            <img alt="image" src="{% static 'assets/11.png' %}"  class="rounded-circle mr-1">
             <img alt="image" src="{% static 'assets/img/avatar/avatar-1.png' %}"  class="rounded-circle mr-1">
             
             <div class="d-sm-none d-lg-inline-block">{{ user.first_name}} {{ user.last_name}}</div></a>
@@ -102,14 +102,23 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="{% url 'dashboard' %}"><img class="mr-3 rounded" width="60" src="{% static 'assets/gif/settings.gif ' %}" alt="itclub">FUEL SUPPLY</a>
+            
+            <a href="{% url 'dashboard' %}"><img alt="image" width="60" height="40" src="{% static 'assets/11.png' %}" >MV KXM</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
             <a href="{% url 'dashboard' %}">FS</a>
           </div>
           <ul class="sidebar-menu">
-            <li class="menu-header"><a class="nav-link" ></a></li>
-            
+            <li class="dropdown active">
+              <a href="{% url "driver" %}" class="nav-link "><i class="fas fa-th"></i><span>Bo'limlar</span></a>              
+            </li>
+           {% comment %}  <li class="menu-header"><a class="nav-link" ></a></li>
+
+            <li class="dropdown active">
+              <a href="{% url 'showing' %}" class="nav-link "><i class="fas fa-th"></i><span>Ariza Holati</span></a>              
+            </li>
+
+           
             <li class="dropdown active">
               <a href="{% url 'dashboard' %}" class="nav-link "><i class="fas fa-fire"></i><span>Bosh sahifa</span></a>              
             </li>
@@ -150,7 +159,7 @@
               <li class="dropdown active">
                 <a href="{% url "driver" %}" class="nav-link "><i class="fas fa-th"></i><span>Haydovchi</span></a>              
               </li>
-
+          
             
 
               <li class="dropdown">
@@ -173,7 +182,7 @@
 
              
                 </ul>
-              </li>
+              </li>  {% endcomment %}
 
           </ul>
 
@@ -198,7 +207,7 @@
    <footer class="main-footer">
     <div class="footer-left">
       
-      Copyright &copy; 2024 <div class="bullet"></div>Owner:<a href=""><img class="mr-3 rounded" width="25" src="{% static 'assets/img/cars logo/itclub.png ' %}" alt="itclub">IT CLUB</a>
+      Copyright &copy; 2025 <div class="bullet"></div>Owner:<a href=""><img class="mr-3 rounded" width="25" src="{% static 'assets/55.png ' %}" alt="">JG'MHO KXM</a>
     </div>
     <div class="footer-right">
       
